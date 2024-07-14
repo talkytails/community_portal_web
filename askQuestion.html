@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/askquestion.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js"></script>
+
+    <title>Talky Tails Community</title>
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header>
+        <div id="hamburger" class="toggle_expanded menu_toggle header_toggle">
+            <span class="ham"></span>
+            <span class="ham"></span>
+            <span class="ham"></span>
+        </div>
+
+        <a href="/">
+            <img src="/img/icons/tt_logo.png" alt="Talky Tails official logo" width="125px" id="tt_header_logo">
+        </a>
+
+        <h4 id="header-h4">Community</h4>
+    </header>
+    <hr id="headerHr">
+
+
+
+    <!-- body -->
+    <div class="mainBody">
+        <div id="mainMenu" class="menuExpanded">
+
+            <div id="menuToggle" class="toggle_expanded menu_toggle"></div>
+
+            <p class="menuHeadings">General</p>
+
+            <a href="/" class="menuAnchors">
+                <div class="menuItem">
+                    <div class="menuItemIconBox">
+                        <img src="/img/icons/home.png" alt="Home icon" class="menuIconVector">
+                    </div>
+                    <p class="menuItemHeadings">Home</p>
+                </div>
+            </a>
+
+            <a href="/profile.html" class="menuAnchors">
+                <div class="menuItem">
+                    <div class="menuItemIconBox">
+                        <img src="/img/icons/profile.png" alt="Profile icon" class="menuIconVector">
+                    </div>
+                    <p class="menuItemHeadings">Profile</p>
+                </div>
+            </a>
+
+            <a href="/notifications.html" class="menuAnchors">
+                <div class="menuItem">
+                    <div class="menuItemIconBox">
+                        <img src="/img/icons/bell.png" alt="Profile icon" class="menuIconVector">
+                    </div>
+                    <p class="menuItemHeadings">Notifications</p>
+                </div>
+            </a>
+
+
+            <a href="/search.html" class="menuAnchors">
+                <div class="menuItem">
+                    <div class="menuItemIconBox">
+                        <img src="/img/icons/search.png" alt="Search icon" class="menuIconVector">
+                    </div>
+                    <p class="menuItemHeadings">Search</p>
+                </div>
+            </a>
+
+            <a href="/categories.html" class="menuAnchors">
+                <div class="menuItem">
+                    <div class="menuItemIconBox">
+                        <img src="/img/icons/category.png" alt="Categories icon" class="menuIconVector">
+                    </div>
+                    <p class="menuItemHeadings">Categories</p>
+                </div>
+            </a>
+
+            <a href="/tags.html" class="menuAnchors">
+                <div class="menuItem">
+                    <div class="menuItemIconBox">
+                        <img src="/img/icons/tag.png" alt="Tags icon" class="menuIconVector">
+                    </div>
+                    <p class="menuItemHeadings">Tags</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="mainContent">
+
+            <form action="" method="post" id="askQForm" style="display: contents;">
+
+                <h2 class="askQHeadings">Title</h2>
+                <p class="askQPara">Please be specific and imagine you’re asking a question to someone personally.</p>
+
+                <input type="text" id="askQTitle" name="askQTitle" placeholder="Type the title fo the qiestion"
+                    class="askQInputs">
+
+
+                <div class="similarQuestionBox">
+
+                    <h3>Similar Questions</h3>
+
+                    <div class="similarQHolder">
+                        <div class="similarQCard">
+                            <a href="" class="similarQAnchors">
+                                <h3>How to build a trust bond if we are humans and pets are dogs?</h3>
+                            </a>
+                            <p class="askQPara similarQDesc" style="margin: 0;">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quas, repellendus eius? Minus doloribus harum autem et, amet totam
+                                quia nemo ab natus similique. Deserunt quaerat architecto nam, dolorem iure ut.</p>
+                            <div class="similarQAsker">asked by &nbsp;&nbsp;<a href=""
+                                    class="inlineProfileCard">john.hargreave</a></p>
+                            </div>
+                        </div>
+
+                        <div class="similarQCard">
+                            <a href="" class="similarQAnchors">
+                                <h3>How to build a trust bond if we are humans and pets are dogs?</h3>
+                            </a>
+                            <p class="askQPara similarQDesc" style="margin: 0;">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quas, repellendus eius? Minus doloribus harum autem et, amet totam
+                                quia nemo ab natus similique. Deserunt quaerat architecto nam, dolorem iure ut.</p>
+                            <div class="similarQAsker">asked by &nbsp;&nbsp;<a href=""
+                                    class="inlineProfileCard">john.hargreave</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <h2 class="askQHeadings" style="margin-top: 50px;">Body</h2>
+                <p class="askQPara">Make sure to include all necessary details for someone to be able to answer your
+                    question.</p>
+
+                <div class="utilityBox">
+                    <div class="utilityIconBox" id="boldButton">
+                        <img src="/img/icons/bold.png" alt="Addition icon" class="menuIconVector">
+                    </div>
+
+                    <div class="utilityIconBox" id="italicButton">
+                        <img src="/img/icons/italic.png" alt="Addition icon" class="menuIconVector">
+                    </div>
+                </div>
+
+                <textarea name="askQTextArea" id="askQTextArea" rows="20"></textarea>
+
+                <div class="preview" id="postPreview">
+                    <h1 style="font-size: 27px;" id="previewQTitle"></h1>
+                    <div id="previewQDesc"></div>
+                </div>
+
+
+                <h2 class="askQHeadings" style="margin-top: 50px;">Tags</h2>
+                <p class="askQPara">Include at least 3 tags that describe the topic of your question. And put comma
+                    after every tag.</p>
+
+                <div class="preview" id="tagsPreview"></div>
+                <input type="text" id="askQTag" name="askQTag" placeholder="Ex. dogs, behaviour," class="askQInputs"
+                    style="margin: 10px 0 10px 0;">
+
+                <div class="suggestionsBox" id="tagSuggestBox">
+                    <p class="tagSuggestion_name" id="">behaviour</p>
+                </div>
+
+
+                <button type="submit">SUBMIT</button>
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="/js/menu.js"></script>
+    <script src="/js/askQuestion.js"></script>
+    <script src="/js/autocomplete.js"></script>
+</body>
+
+</html>

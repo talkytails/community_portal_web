@@ -1,0 +1,74 @@
+html{
+    height: 100%; width: 100%;
+}
+#authBody{
+    height: 100%; width: 100%;
+    background-color: var(--questionGray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formContainer{
+    height: auto; width: 400px;
+    background: linear-gradient(90deg, var(--lite_purple), var(--dark_purple));
+    border-radius: 50px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    box-sizing: border-box;
+}
+.formContainer:hover{
+    background: linear-gradient(90deg, var(--lite_orange), var(--dark_orange));
+}
+form{
+    height: 100%; width: 100%;
+    border-radius: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    flex-direction: column;
+}
+.formOwnerBox{
+    height: auto; width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 30px;
+    background: linear-gradient(90deg, var(--lite_purple), var(--dark_purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h2{
+    font-family: 'League Spartan';
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+input{
+    height: 65px; width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--bg_lite_purple);
+    border-radius: 16px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+button{
+    height: 65px; width: 100%;
+    background: linear-gradient(90deg, var(--lite_orange), var(--dark_orange));
+    border-radius: 16px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 421px){.formContainer{width: 95%;}}
+@media screen and (max-width: 323px){h1, h2{font-size: 23px;}}

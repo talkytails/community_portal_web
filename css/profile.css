@@ -1,0 +1,198 @@
+.profileDetailsBox{
+    height: 200px; width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+#profileImage{
+    min-height: 201px; min-width: 201px;
+    border-radius: 20px;
+}
+.profileText{
+    font-size: var(--desktop_paragraph);
+}
+.profileHr{
+    width: 70%;
+    margin: 10px 0 10px 0;
+}
+.headingHolder{
+    height: 60px; width: 100%;
+    display: flex;
+}
+.left-headingHolder{
+    height: 100%; width: 50%;
+    display: flex;
+    align-items: center;
+}
+.right-headingHolder{
+    height: 100%; width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.viewButton{
+    height: 39px;
+    padding: 0 10px 0 10px;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    background: linear-gradient(90deg, var(--lite_purple), var(--dark_purple));
+    color: white;
+    border: none;
+}
+.badgeGrid{
+    height: auto; width: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    overflow-x: scroll;
+} 
+.badgeBox{
+    height: auto; width: auto;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--questionGray);
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.badgeImage{
+    height: var(--badgeVectorSize); width: var(--badgeVectorSize);
+}
+.badgeName{
+    margin-top: 8px;
+    color: var(--dark_purple);
+}
+
+#statsBox{
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+.statsCard{
+    height: 200px; width: calc(100% - 4px);
+    background-color: var(--questionGray);
+    border: 2px solid var(--lineGray);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.upper-statsCard{
+    height: 50%; width: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+}
+.lower-statsCard{
+    height: 50%; width: 100%;
+    /* background-color: powderblue; */
+    display: flex;
+}
+.left-upper-statsCard,
+.right-upper-statsCard,
+.left-lower-statsCard,
+.right-lower-statsCard{
+    height: 100%; width: 50%;
+    /* background-color: aquamarine; */
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left-statsBox{
+    width: 30%;
+}
+.right-statsBox{
+    width: 70%;
+}
+.aboutPara{
+    font-size: var(--desktop_paragraph);
+    color: var(--textGray);
+    line-height: 30px;
+}
+table{
+    width: 100%;
+    background-color: var(--questionGray);
+    border-radius: 20px;
+    border: 2px solid var(--lineGray);
+}
+tr{height: 53px;}
+td{padding: 10px;}
+.tagTd{width: 50%;}
+.postsQuantityTd{
+
+}
+.postQunatityHeading{
+    background: linear-gradient(90deg, var(--lite_purple), var(--dark_purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.achievementDescHolder{
+    height: auto; max-width: calc(100% - 361px - 100px - 45px);
+}
+
+.achievementBox{
+    width: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.achievementCard{
+    width: 100%;
+    background-color: var(--questionGray);
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    padding: 15px;
+    box-sizing: border-box;
+    gap: 15px;
+}
+.achievementImage{
+    height: var(--menuBadgeVectorSize); width: var(--menuBadgeVectorSize);
+}
+.badgeDetails{
+    display: flex;
+    flex-direction: column;
+    width: 361px;
+}
+.achivementPara{
+    font-size: 17px;
+    color: var(--textGray);
+    line-height: 33px;
+    max-width: 100%;
+}
+.verticalSeparator{
+    height: auto; width: 2px;
+    background-color: var(--lineGray);
+    border-radius: 20px;
+}
+.badgePrevAnchor{
+    display: contents;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1013px) {
+    .achievementCard{flex-direction: column;gap: 8px;}
+    .achievementDescHolder{max-width: 100%;}
+    .verticalSeparator{display: none;}
+}
+
+@media screen and (max-width: 983px) {
+    #statsBox{flex-direction: column;}
+    .left-statsBox{width: 100%;}
+    .right-statsBox{width: 100%;}
+}
+@media screen and (max-width: 501px) {
+    #profileImage{min-height: 141px;min-width: 141px;}
+    .profileText{font-size: 16px;}
+    h1{font-size: 25px;}
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Badge</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        let container, camera, scene, renderer, badge;
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+
+        function init() {
+            container = document.getElementById('container');
+
+            // Initialize the scene
+            scene = new THREE.Scene();
+
+            // Initialize the camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            // Initialize the renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            // Add a light
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(1, 1, 1).normalize();
+            scene.add(light);
+
+            // Load the texture
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load('/img/badges/GoldMedal2.png');  // Replace with your image path
+
+            // Create the canvas texture for the text
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 512;
+            const context = canvas.getContext('2d');
+            context.fillStyle = '#FF3131';
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.fillStyle = '#FFFFFF';
+            context.font = '48px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText('Devin Weston', canvas.width / 2, canvas.height / 3);
+            context.fillText('Petminister', canvas.width / 2, (canvas.height / 3) * 1.5);
+            context.fillText('06/01/2023', canvas.width / 2, (canvas.height / 3) * 2);
+            
+            const textTexture = new THREE.CanvasTexture(canvas);
+
+            // Create a bump map
+            const bumpCanvas = document.createElement('canvas');
+            bumpCanvas.width = 512;
+            bumpCanvas.height = 512;
+            const bumpContext = bumpCanvas.getContext('2d');
+            bumpContext.drawImage(canvas, 0, 0);
+            bumpContext.globalCompositeOperation = 'source-in';
+            bumpContext.fillStyle = '#FFFFFF';
+            bumpContext.fillRect(0, 0, bumpCanvas.width, bumpCanvas.height);
+            bumpContext.globalCompositeOperation = 'source-out';
+            bumpContext.fillStyle = '#000000';
+            bumpContext.fillRect(0, 0, bumpCanvas.width, bumpCanvas.height);
+            
+            const bumpTexture = new THREE.CanvasTexture(bumpCanvas);
+
+            // Create the badge (a coin shape) with higher segments and increased size
+            const geometry = new THREE.CylinderGeometry(1.5, 1.5, 0.3, 128, 128);
+            const materialArray = [
+                new THREE.MeshPhongMaterial({ color: "#FF3131" }),  // Side material
+                new THREE.MeshPhongMaterial({ map: textTexture, bumpMap: bumpTexture, bumpScale: 0.1 }),  // Bottom material with text and bump map
+                new THREE.MeshPhongMaterial({ map: texture })     // Top material with texture
+            ];
+            badge = new THREE.Mesh(geometry, materialArray);
+            scene.add(badge);
+
+            // Handle mouse events
+            container.addEventListener('mousedown', onMouseDown, false);
+            container.addEventListener('mousemove', onMouseMove, false);
+            container.addEventListener('mouseup', onMouseUp, false);
+
+            // Handle window resize
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onMouseDown(event) {
+            isDragging = true;
+            previousMousePosition = { x: event.clientX, y: event.clientY };
+        }
+
+        function onMouseMove(event) {
+            if (isDragging) {
+                const deltaX = event.clientX - previousMousePosition.x;
+                const deltaY = event.clientY - previousMousePosition.y;
+
+                badge.rotation.y += deltaX * 0.01;
+                badge.rotation.x += deltaY * 0.01;
+
+                previousMousePosition = { x: event.clientX, y: event.clientY };
+            }
+        }
+
+        function onMouseUp(event) {
+            isDragging = false;
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>

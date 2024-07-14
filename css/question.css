@@ -1,0 +1,125 @@
+#questionHeading{
+    font-size: var(--desktop_title);
+    color: black;
+    line-height: 43px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+#label_view{
+    margin-bottom: 20px;
+}
+
+.questionHolder{
+    height: auto; width: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+}
+.questionVoterBox{
+    height: 100%; width: 80px;
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.questionContextBox{
+    height: 100%; width: calc(100% - 80px);
+    /* background-color: rosybrown; */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.voterTriangles{
+    height: 30px; width: 30px;
+}
+.voterIconBox{
+    height: fit-content; width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.voteUpButton:hover{background-color: var(--bg_lite_orange);}
+.voteDownButton:hover{background-color: var(--bg_lite_purple);}
+.questionRating{
+    font-weight: bold;
+}
+.descriptionHolder{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.descriptiveText{
+    color: var(--textGray);
+    font-size: var(--desktop_paragraph);
+    line-height: 35px;
+}
+.tagBox{
+    height: auto; width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.profileBox{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.activityBox{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.activityOperators{
+    color: var(--textGray);
+    text-decoration: none;
+}
+.activityOperators:hover{
+    color: var(--dark_purple);
+}
+.commentHolder{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.comment{
+    height: fit-content; max-width: 80%;
+    display: flex;
+}
+.commentOperationBox{
+    height: 100%; width: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+.commentVoter{
+    height: 14px; width: 14px;
+    padding: 8px;
+    border-radius: 8px;
+}
+.comment:hover .commentOperationBox{
+    display: flex;
+}
+.commentContent{
+    display: flex; gap: 8px;
+    align-items: start;
+    padding: 8px;
+    background: var(--questionGray);
+    border-radius: 16px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.commentRating{
+    padding: 6px;
+    background-color: var(--bg_lite_purple);
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.commentText{
+    font-size: var(--desktop_paragraph);
+    color: var(--textGray);
+    max-width: 650px;
+    word-wrap: break-word;
+    line-height: 30px;
+}

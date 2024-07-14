@@ -1,0 +1,31 @@
+:root{
+    /* Colours */
+    --dark_purple: #4E37B3;
+    --lite_purple: #7D4CE4;
+    --bg_lite_purple: #E3D9FF;
+    --dark_orange: #FF3131;
+    --lite_orange: #FF914D;
+    --bg_lite_orange: #FFCCB7;
+    --textGray: #696969;
+    --lineGray: #e7e7e7;
+    --questionGray: #F8F8F8;
+
+    /* Text Sizes */
+    --desktop_paragraph: 18px;
+    --desktop_title: 31px;
+    --menuFontSize: 17px;
+    --menuItemNameFontSize: 19px;
+    --statsLabels: 15px;
+
+    /* Main body sizes and ratios */
+    --menuWidth: 303px;
+    --mainContentWidth: calc(100vw - 303px);
+    --menuToggleSize: 49px;
+    --menuItemIconBoxSize: 49px;
+    --menuItemIconBoxSize_resp: 35px;
+    --menuIconVectorSize: 21px;
+    --badgeVectorSize: 171px;
+    --menuBadgeVectorSize: 100px;
+    
+
+}
